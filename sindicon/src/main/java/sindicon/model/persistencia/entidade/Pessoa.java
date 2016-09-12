@@ -6,8 +6,11 @@ import javax.persistence.*;
  * Created by Marconi on 01/09/2016.
  */
 @MappedSuperclass
+@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Pessoa {
-
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Integer idPessoa;
     private String nome;
     private Integer rg;
     @Column(name = "orgao_expeditor")
@@ -21,6 +24,14 @@ public abstract class Pessoa {
 //Relacionamentos:
 //Gets e Sets:
 
+
+    public Integer getIdPessoa() {
+        return idPessoa;
+    }
+
+    public void setIdPessoa(Integer idPessoa) {
+        this.idPessoa = idPessoa;
+    }
 
     public String getNome() {
         return nome;

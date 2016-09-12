@@ -26,7 +26,7 @@ public class VisitanteServico {
 
         //PUT(Persons)
         public void atualizarVisitante(Visitante visitante) throws Exception {
-            if (visitante.getIdVisitante() == null) {
+            if (visitante.getIdPessoa() == null) {
                 throw new Exception("Não foi possível atualizar um documento(Document) com Id nulo.");
             }
             visitanteRepositorio.save(visitante);
